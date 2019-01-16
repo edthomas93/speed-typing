@@ -14,4 +14,6 @@
 
 1. Select Difficulty
 
-2. Submit High Scores
+2. Submit High Scores and store them on MongoDB
+
+3. Style the interface
