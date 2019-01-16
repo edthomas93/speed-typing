@@ -1,6 +1,13 @@
 window.addEventListener('load', start)
 
-let time = 5;
+const levels = {
+  easy: 5,
+  medium: 3,
+  hard: 2
+}
+const currentLevel = levels.medium;
+
+let time = currentLevel;
 let score = 0;
 let isPlaying;
 
@@ -34,6 +41,7 @@ const words= [
 
 function start() {
   wordInput.addEventListener('input', startMatch);
+  seconds.innerHTML = currentLevel;
   setInterval(countdown, 1000);
   setInterval(checkStatus, 50);
 }
@@ -41,7 +49,7 @@ function start() {
 function startMatch() {
   if(matchWords()) {
     isPlaying = true;
-    time = 6;
+    time = currentLevel + 1;
     showWord(words);
     wordInput.value = '';
     score += 1;
