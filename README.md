@@ -4,7 +4,9 @@
 
 1. Clone the repo to your desktop
 
-2. Open the html page on your browser to access the game!
+`git clone git@github.com:edthomas93/speed-typing.git`
+
+2. Open the folder and copy the path of the `index.html` file into the address bar in your browser to access the game.
 
 3. Enjoy!
 
