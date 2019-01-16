@@ -34,8 +34,25 @@ const words= [
 
 function start() {
   showWord(words);
+  wordInput.addEventListener('input', startMatch);
   setInterval(countdown, 1000);
   setInterval(checkStatus, 50);
+}
+
+function startMatch() {
+  if(matchWords()) {
+    console.log('Match!');
+  }
+}
+
+function matchWords(){
+  if(wordInput.value === currentWord.innerHTML) {
+    message.innerHTML = 'Correct!';
+    return true;
+  } else {
+    message.innerHTML = '';
+    return false;
+  }
 }
 
 function showWord(words) {
