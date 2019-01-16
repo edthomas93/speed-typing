@@ -33,7 +33,6 @@ const words= [
 ];
 
 function start() {
-  showWord(words);
   wordInput.addEventListener('input', startMatch);
   setInterval(countdown, 1000);
   setInterval(checkStatus, 50);
@@ -41,7 +40,16 @@ function start() {
 
 function startMatch() {
   if(matchWords()) {
-    console.log('Match!');
+    isPlaying = true;
+    time = 6;
+    showWord(words);
+    wordInput.value = '';
+    score += 1;
+  }
+  if(score === -1){
+    scoreDisplay.innerHTML = 0;
+  } else {
+    scoreDisplay.innerHTML = score;
   }
 }
 
@@ -72,5 +80,6 @@ function countdown() {
 function checkStatus() {
   if(!isPlaying && time === 0) {
     message.innerHTML = 'Game Over!'
+    score = -1;
   }
 }
